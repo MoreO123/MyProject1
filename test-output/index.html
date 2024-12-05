@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\omkar\eclipse-workspace\Project1Framework\src\test\java\testcases\testng.xml</span>
+                    <span>C:\Users\omkar\git\MyProject1\src\test\java\testcases\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                    <span class="method-stats">3 methods, 2 failed,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -101,6 +101,11 @@
                       <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
                     </span>
                     <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="testcases.TC_03_SEARCH" class="method navigator-link" hash-for-method="Serach">Serach</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="testcases.TC_01_Registration" class="method navigator-link" hash-for-method="registration">registration</a> <!-- method navigator-link -->
@@ -143,9 +148,30 @@
                   <a name="registration">
                   </a> <!-- registration -->
                   <span class="method-name">registration</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.getText()&quot; because &quot;this.accountcreation&quot; is null
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.isDisplayed()&quot; because &quot;this.accountcreation&quot; is null
 	at pageFactory.AccountCreatedPage.AccountSuccessfullyGenerate(AccountCreatedPage.java:19)
-	at testcases.TC_01_Registration.registration(TC_01_Registration.java:37)
+	at testcases.TC_01_Registration.registration(TC_01_Registration.java:36)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">testcases.TC_03_SEARCH</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Serach">
+                  </a> <!-- Serach -->
+                  <span class="method-name">Serach</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.sendKeys(java.lang.CharSequence[])&quot; because &quot;this.searchtext&quot; is null
+	at pageFactory.SearchPage.searchTextField(SearchPage.java:26)
+	at testcases.TC_03_SEARCH.Serach(TC_03_SEARCH.java:15)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 ... Removed 25 stack frames
 </div> <!-- stack-trace -->
@@ -171,18 +197,19 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\omkar\eclipse-workspace\Project1Framework\src\test\java\testcases\testng.xml</span>
+            <span class="header-content">C:\Users\omkar\git\MyProject1\src\test\java\testcases\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;parameter name=&quot;browser&quot; value=&quot;EDGE&quot;/&gt;
+  &lt;parameter name=&quot;browser&quot; value=&quot;CHROME&quot;/&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;testcases.TC_01_Registration&quot;/&gt;
       &lt;class name=&quot;testcases.TC_02_Login&quot;/&gt;
+      &lt;class name=&quot;testcases.TC_03_SEARCH&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -196,7 +223,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (2 classes)</span>
+                <span class="test-name">Test (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -222,20 +249,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'registration')
 data.setCell(0, 2, 'testcases.TC_01_Registration')
-data.setCell(0, 3, 8536);
+data.setCell(0, 3, 8468);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'login')
 data.setCell(1, 2, 'testcases.TC_02_Login')
-data.setCell(1, 3, 3640);
+data.setCell(1, 3, 2160);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'Serach')
+data.setCell(2, 2, 'testcases.TC_03_SEARCH')
+data.setCell(2, 3, 29);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 12 seconds</span>
+              <span class="suite-total-time">Total running time: 10 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -262,35 +293,52 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">testcases.TC_01_Registration</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">launchBrowser(EDGE)</span>
+              <div class="configuration-class before">
+                <span class="method-name">launchBrowser(CHROME)</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- configuration-method before -->
+              </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">registration</span>
-                <span class="method-start">8689 ms</span>
+                <span class="method-start">7636 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
+              <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">17233 ms</span>
-              </div> <!-- configuration-method after -->
+                <span class="method-start">16120 ms</span>
+              </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testcases.TC_02_Login</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">launchBrowser(EDGE)</span>
-                <span class="method-start">17535 ms</span>
-              </div> <!-- configuration-method before -->
+              <div class="configuration-class before">
+                <span class="method-name">launchBrowser(CHROME)</span>
+                <span class="method-start">16433 ms</span>
+              </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">login</span>
-                <span class="method-start">24776 ms</span>
+                <span class="method-start">20500 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
+              <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">28419 ms</span>
-              </div> <!-- configuration-method after -->
+                <span class="method-start">22664 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">testcases.TC_03_SEARCH</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">launchBrowser(CHROME)</span>
+                <span class="method-start">22857 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Serach</span>
+                <span class="method-start">27807 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">27842 ms</span>
+              </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

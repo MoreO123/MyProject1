@@ -55,7 +55,7 @@ public class RegisterPage
 	public String Email1 ()
 	{
 		String iemail = GeneralUtilities.randomEmail();
-		email.sendKeys(iemail);
+		email.sendKeys(iemail); System.out.println(iemail);
 		LoginPage.r_email=  iemail;
 		return iemail;
 		
@@ -64,7 +64,7 @@ public class RegisterPage
 	public String Password1 ()
 	{
 		String psword = GeneralUtilities.randomPassword();
-		password.sendKeys(psword);
+		password.sendKeys(psword); System.out.println(psword);
 		LoginPage.r_password =psword;
 		return psword;
 	}

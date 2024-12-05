@@ -9,7 +9,7 @@ import pageFactory.MyAccountPage;
 
 public class TC_02_Login extends BasicTestCase
 {
-	@Test 
+	@Test(priority=2) 
 	void login () {
 		
 		HomePage hp=new HomePage(driver);

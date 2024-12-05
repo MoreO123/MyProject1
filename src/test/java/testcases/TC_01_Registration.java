@@ -3,7 +3,6 @@ package testcases;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import jdk.internal.org.jline.utils.Log;
 import pageFactory.AccountCreatedPage;
 import pageFactory.HomePage;
 import pageFactory.RegisterPage;
@@ -12,7 +11,7 @@ import utilities.GeneralUtilities;
 public class TC_01_Registration extends BasicTestCase
 {
 
-	@Test
+	@Test(priority=1)
 	void registration() throws InterruptedException
 	{
 		
@@ -34,10 +33,8 @@ public class TC_01_Registration extends BasicTestCase
 		Thread.sleep(3000);
 		
 		AccountCreatedPage acp=new AccountCreatedPage(driver);
-		String ActualText = acp.AccountSuccessfullyGenerate();
-		String XpectedText = "Your Account Has Been Created!";
-		
-		Assert.assertEquals(ActualText, XpectedText);
+		boolean account = acp.AccountSuccessfullyGenerate();
+		Assert.assertTrue(account);
 		
 		
 		

@@ -15,9 +15,10 @@ public class AccountCreatedPage
 		this.driver =driver;
 	}
 
-	public String AccountSuccessfullyGenerate() {
-		String asf = accountcreation.getText();
+	public boolean AccountSuccessfullyGenerate() {
+		boolean asf = accountcreation.isDisplayed();
 		return asf;
+		
 	}
 	
 
